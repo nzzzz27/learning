@@ -6,6 +6,23 @@ res0: Int = 5
  */
 
 object P02 {
+  val list: List[Int] = List(1, 1, 2, 3, 5, 8)
 
 
+  val result1 = list.init.last
+  println(s"result1 = ${result1}")
+
+
+  def getLastSingleElement[A](list: List[A]): A = {
+    list match {
+      case x::_::Nil => x
+      case _::xs => getLastSingleElement(xs)
+    }
+  }
+  val result2 = getLastSingleElement(list)
+  println(s"result2 = ${result2}")
+
+
+  val result3 = list(list.length - 2)
+  println(s"result3 = ${result3}")
 }
