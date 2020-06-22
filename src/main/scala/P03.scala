@@ -18,3 +18,17 @@ object P03 {
   println(s"result1 = ${result1}")
 
 }
+
+object aa {
+  val line = ("AAAAAAAA").toList
+
+  def validatePassword[A](list: List[A]) = {
+    list match {
+      case x::xs if (xs.contains(x)) => println("OK")
+      case _ => println("NG")
+    }
+  }
+
+
+  println(validatePassword(line))
+}
