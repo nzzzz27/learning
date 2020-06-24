@@ -7,7 +7,18 @@ scala> nth(2, List(1, 1, 2, 3, 5, 8))
 res0: Int = 2
  */
 
-object P03 {
+object P03_200624 {
+  val list = List(1, 1, 2, 3, 5, 8)
+
+  def nth[A](n: Int, list: List[A]): A = {
+    list(n)
+  }
+  val result1 = nth(2, list)
+  println(s"result1 = ${result1}")
+}
+
+
+object P03_200621 {
   val list = List(1, 1, 2, 3, 5, 8)
 
 

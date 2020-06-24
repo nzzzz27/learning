@@ -4,7 +4,37 @@
 //     res0: Int = 8
 
 
-object P01 {
+object P01_200624 {
+  val list = List(1, 1, 2, 3, 5, 8)
+
+  val result1 = list.last
+  println(s"result1 = ${result1}")
+
+  def getLastElement[A](list: List[A]): A = {
+    list match {
+      case x::Nil => x
+      case x::xs => getLastElement(xs)
+    }
+  }
+  val result2 = getLastElement(list)
+  println(s"result2 = ${result2}")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+object P01_200621 {
   val list1: List[Int] = List(1, 1, 2, 3, 5, 8)
 
   val result1 = list1.last

@@ -5,7 +5,19 @@ scala> reverse(List(1, 1, 2, 3, 5, 8))
 res0: List[Int] = List(8, 5, 3, 2, 1, 1)
  */
 
-object P05 {
+
+object P05_200624 {
+  val list = List(1, 1, 2, 3, 5, 8)
+
+  def reverse[A](list: List[A]): List[A] = {
+    list.foldLeft(Nil: List[A])((acc, el) => el :: acc)
+  }
+  val result1 = reverse(list)
+  println(result1)
+}
+
+
+object P05_200622 {
   val list = List(1, 1, 2, 3, 5, 8)
 
   val result1 = list.reverse
