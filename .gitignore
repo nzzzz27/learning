@@ -2,3 +2,4 @@
 project
 target
 src/test
+.DS_Store
