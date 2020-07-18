@@ -31,9 +31,6 @@ scala> Option(null)
 val res2: Option[Null] = None
 ```
 
-## 使い方
-Option[+A]型をコレクションやモナドのように扱う最も慣用的な方法は、`map`, `flatMap`, `filter`, `foreach`を使うこと。
-
 ## メゾット - 存在確認
 ### `.isDefined`
 Someならtrue, Noneならfalseを返す。  
@@ -163,7 +160,6 @@ val res8: Option[String] = Some(HiHi)
 `Some(Some("abc"))`のように、`Option[Option[A]]`と入れ子になったOption型を1階層にする。　　
 ```
 //定義
-```
 def flatten[B](implicit ev: A <:< Option[B]): Option[B] =
     if (isEmpty) None else ev(this.get)
 ```
@@ -232,7 +228,7 @@ val res27: List[Nothing] = List()
  - [[filter]] — An optional value satisfies predicate
  - [[filterNot]] — An optional value doesn't satisfy predicate
  - [[forall]] — Apply predicate on optional value, or true if empty
-
+```
 
 ## 参考文献
 [object Option](https://github.coam/scala/scala/blob/2.12.x/src/library/scala/Option.scala)
