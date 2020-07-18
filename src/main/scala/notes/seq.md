@@ -252,6 +252,20 @@ val res50: Int = 10
 
 ### `match式`
 
+### 空のリストの作り方
+空リストの書き方は複数あり、型指定もできる。  
+```
+val l1: List[Int] = Nil
+
+//型指定しない場合、Nilはscala.collection.immutable.Nil.typeの戻り値を指定する。　　
+val l2 = Nil:List[Int]
+
+val l3 = List.empty[Int]
+
+//型指定しない場合、List()はList[Nothing]型の戻り値を指定する。　　
+val l4 = List[Int]()
+```
+
 
 ## 参考
 [列トレイト SEQ、INDEXEDSEQ、および LINEARSEQ](https://docs.scala-lang.org/ja/overviews/collections/seqs.html)
