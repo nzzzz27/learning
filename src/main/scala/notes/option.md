@@ -2,7 +2,7 @@
 値がない場合を示す時に使用する。  
 [+A]は型パラメータで、中に入る値の型を示す。  
 
-■ [定義](https://github.coam/scala/scala/blob/2.12.x/src/library/scala/Option.scala)
+## [定義](https://github.coam/scala/scala/blob/2.12.x/src/library/scala/Option.scala)
 値があれば、Some[A]インスタンス、なければNoneオブジェクトを返す。
 ```
 // Some[A]
@@ -12,7 +12,7 @@ def apply[A](x: A): Option[A] = if (x == null) None else Some(x)
 def empty[A] : Option[A] = None
 ```
 
-■ Option型の値の作り方
+## Option型の値の作り方
 ```
 // Some[A]になる場合1
 scala> Option("hello")
@@ -31,7 +31,7 @@ scala> Option(null)
 val res2: Option[Null] = None
 ```
 
-##使い方
+## 使い方
 Option[+A]型をコレクションやモナドのように扱う最も慣用的な方法は、`map`, `flatMap`, `filter`, `foreach`を使うこと。
 
 ## メゾット - 存在確認
