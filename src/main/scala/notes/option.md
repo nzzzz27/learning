@@ -220,18 +220,8 @@ scala> None.toList
 val res27: List[Nothing] = List()
 ```
 
- - [[fold]] —  Apply function on otional value, return default if empty
- - [[map]] — Apply a function on the optional value
- - [[flatMap]] — Same as map but function must return an optional value
- - [[foreach]] — Apply a procedure on option value
- - [[collect]] — Apply partial pattern match on optional value
- - [[filter]] — An optional value satisfies predicate
- - [[filterNot]] — An optional value doesn't satisfy predicate
- - [[forall]] — Apply predicate on optional value, or true if empty
-```
-
 ## 参考文献
 [object Option](https://github.coam/scala/scala/blob/2.12.x/src/library/scala/Option.scala)
 [富永さんメモ](https://github.com/takapi327/learners-dictionary/blob/master/scala/summary/Option.md)  
-
+[Scala Option](http://www.mwsoft.jp/programming/scala/scala_option.html)
 
