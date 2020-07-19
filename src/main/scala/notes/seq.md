@@ -1,6 +1,7 @@
 # Seq型
 > 列 (Seq) トレイトは、長さ (length) があり、それぞれの要素に 0 から数えられた固定された添字 (index) がある Iterable の一種だ。
 
+## 目次
 - [演算 - 値取得](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#%E6%BC%94%E7%AE%97---%E5%80%A4%E5%8F%96%E5%BE%97)  
   - [添字](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#i)  
   - [.head](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#head)  
@@ -24,7 +25,7 @@
 - [演算 - 加工](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#%E6%BC%94%E7%AE%97---%E5%8A%A0%E5%B7%A5)
   - [.map(式)](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#map%E5%BC%8F)
   - [.flatten](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#flatten)
-  - [.filter(式）]（https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#filter%E5%BC%8F）
+  - [.filter(式)](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#filter%E5%BC%8F)
   - [.collect {case式}](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#collect--case%E5%BC%8F-)
   - [.collectFirst](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#collectfirst--case%E5%BC%8F-)
   - [.fildLeft(初期値)((acc, value) => 式)](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#foldleft%E5%88%9D%E6%9C%9F%E5%80%A4accumulator-value--%E5%BC%8F)
