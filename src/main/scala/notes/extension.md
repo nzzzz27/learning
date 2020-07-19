@@ -24,7 +24,7 @@
 定義方法
 ```
 //スーパークラス
-class クラス名(コンストラクタ) { フィールド }
+class クラス名(クラスパラメータ) { フィールド }
 
 //サブクラス
 class サブクラス名(サブクラスのコンストラクタ) extends スーパークラス名(スーパークラスのコンストラクタ) { フィールド }
@@ -69,6 +69,98 @@ triangle.draw()  //これは、青色の図形です。
 ```
 
 ### case class
+### case classを定義する
+```
+case class クラス名(クラスパラメータ)
+```
+
+#### case classを使う
+例1：クラスにcase classを継承
+```
+//case classを定義
+case class Shop(name: String, reccomend: String) {
+  def greetings(): Unit = {
+    println(s"$name へようこそ! おすすめは、$reccomend です！")
+  }
+}
+
+//クラスに継承
+class Cafe(name: String, reccomend: String) extends Shop (name, reccomend)
+
+//インスタンス化
+val cafe = new Cafe("Scala Cafe", "Coffee")
+
+//greetingsメゾットを実行
+cafe.greetings //Scala Cafe へようこそ! おすすめは、Coffee です！
+```
 
 
 ### trait 
+classから、newでインスタンス化する機能を省いたもの。インスタンス化ができないので、パラメータを持たない。  
+クラスがトレイトを継承することをmixinという。
+
+使用メリットとして、クラスと同様に以下がある。
+- 独自の型を作成し、複数の型を扱う（多態性）
+- 実装の再利用（メゾットの上書き）
+
+
+#### traitを定義する
+```
+//宣言のみ
+trait HairColor
+
+//フィールドがある場合
+trait Namable {
+  val name: String
+  def show(): Unit = println(name)
+}
+```
+
+#### traitを使う
+トレイトを定義し、継承する
+```
+trait トレイト名 extends スーパートレイト1 with スーパートレイト2 { }
+```
+
+トレイトをミックスインする
+```
+class クラス名 extends スーパークラス with スーパートレイト { } 
+```
+
+例1：トレイトにトレイトを継承
+```
+//traitを定義
+trait Job { val name: String }
+
+//継承
+val job1 = new { val name = "teacher" } with Job
+
+//値を取得
+job1.name //teacher
+```
+
+例2：mixin
+```
+//traitを定義
+trait Namable {
+  val name: String 
+  def show(): Unit = println(name)
+}
+
+//mixin
+class Employee(val name: String) extends AnyRef width Namable 
+
+//実行
+val taro = new Employee("太郎")
+taro.display() //太郎
+```
+
+
+
+
+
+
+
+
+
+

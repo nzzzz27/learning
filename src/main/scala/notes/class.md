@@ -74,6 +74,5 @@ point.x = 3  // error: reassignment to val
 ```
 
 
-
 ## 参考
 [クラス](https://docs.scala-lang.org/ja/tour/classes.html)

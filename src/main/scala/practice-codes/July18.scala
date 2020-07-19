@@ -1,38 +1,48 @@
-object July18 { 
+object July19 { 
   def main(args: Array[String]): Unit = {
-    val user1 = new User("Tom", 20)
-    user1.greet()
-
-    val point1 = new Point
-    point1.x = 99
-    point1.y = 101
-
-    println(point1.x)
-    println(point1.y)
+    val triangle = new Triangle(10, 30)
+    println(triangle.width)
+    println(triangle.getArea())
+    triangle.draw()
+    
+    println(job1.name)
+    
+    cafe.greetings
   }
   
-  class User(val name: String, val age: Int) {
-    def greet(_name: String = name , _age: Int = age): Unit = {
-      println(s"Hello, I am ${name} and ${age} years old}")
+  class Shape(val width: Int, val height: Int) {
+    def draw(): Unit = {
+      println("不明な図形")
+    } 
+  }
+  
+  class Triangle(width: Int, height: Int) extends Shape(width, height) {
+    override def draw(): Unit = {
+      println("三角形")
+    }
+    def getArea(): Int = {
+      width * height / 2
+  }
+  }
+  
+  class Person(val name: String, val age: Int, var nationality: String = "Japan") {
+    def greetings(): Unit = {
+      println(s"Hi! My name is $name, $age years old, and from $nationality.")
     }
   }
   
-  class Point {
-    private var _x = 0
-    private var _y = 0
-    private val bound = 100
+  class Japanese(name: String, age: Int) extends Person(name, age) 
+   
+  trait Job { val name: String }
+  val job1 = new { val name = "teacher" } with Job
 
-    def x = _x
-    def x_= (newValue: Int): Unit = {
-      if (newValue < bound) _x = newValue else printWarning
+  abstract case class Shop(name: String, reccomend: String) {
+    def greetings(): Unit = {
+      println(s"$name へようこそ! おすすめは、$reccomend です！")
     }
+  } 
 
-    def y = _y
-    def y_= (newValue: Int): Unit = {
-     if (newValue < bound) _y = newValue else printWarning
-    }
+  class Cafe(name: String, reccomend: String) extends Shop (name, reccomend)
 
-    private def printWarning = println("WARNING: Out of bounds")
-  }
-
+  val cafe = new Cafe("Sccala Cafe", "Coffee")
 }
