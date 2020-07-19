@@ -249,6 +249,16 @@ val res50: Int = 10
 ```
 
 ### `.reduce((accumulator, value) => 式)`
+要素同士を左から順に演算した結果を返す。初期値がないので、要素がない場合は例外を返す。
+```
+//例1
+scala> Seq(1, 2, 3, 4, 5).reduce((x, y) => x + y)
+val res24: Int = 15
+
+//例2：上記は、以下の書き方でも表せられる
+scala> Seq(1, 2, 3, 4, 5).reduce(_ + _)
+val res25: Int = 15
+```
 
 ### `match式`
 
