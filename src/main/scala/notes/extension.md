@@ -1,21 +1,20 @@
 # 継承
-似た構造や目的を持ったオブジェクトを一まとめにして、その機能や要素を他のクラスに継承させることができる。　　
-継承元（親）をスーパークラス、継承先（子）をサブクラスという。　　
+似た構造や目的を持ったオブジェクトを一まとめにして、その機能や要素を他のクラスに継承させることができる。元（親）をスーパークラス、継承先（子）をサブクラスという。　　
 
 継承することのメリットとしては、以下が挙げられる。　　
-- 独自の型を作れる = Seqなど要素の型が一律でないといけない時に便利
+- 独自の型を作成し、複数の型を扱う（多態性） ※Seqなど要素の型が一律でないといけない時に便利
 - 持つべき要素を強制的に共通化できる
-
+- 実装の再利用（メゾットの上書き）
 
 ## 継承の方法
 特徴
-- class
+- [class](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/extension.md#class)
   - サブクラスを1つしか作成できない
   - 要件からメゾットまでフレキシブルなものに対して使用しやすい。例えば電子レンジのように、色、サイズ、W数など決まっていないもの。
-- case class
+- [case class](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/extension.md#case-class)
   - サブクラスを複数持てる
   - 便利メゾットが使えたり、newでインスタンス化する必要がない
-- trait
+- [trait](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/extension.md#trait)
   - サブクラスを複数持てる
   - 振る舞いや見た目など、規格が決まっているものに対して使用しやすい。例えば、USBのようにサイズや差し込み口の形が決定しているもの。
 
@@ -69,7 +68,7 @@ triangle.draw()  //これは、青色の図形です。
 ```
 
 ### case class
-### case classを定義する
+#### case classを定義する
 ```
 case class クラス名(クラスパラメータ)
 ```
@@ -98,11 +97,6 @@ cafe.greetings //Scala Cafe へようこそ! おすすめは、Coffee です！
 ### trait 
 classから、newでインスタンス化する機能を省いたもの。インスタンス化ができないので、パラメータを持たない。  
 クラスがトレイトを継承することをmixinという。
-
-使用メリットとして、クラスと同様に以下がある。
-- 独自の型を作成し、複数の型を扱う（多態性）
-- 実装の再利用（メゾットの上書き）
-
 
 #### traitを定義する
 ```
