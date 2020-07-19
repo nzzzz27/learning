@@ -1,6 +1,38 @@
 # Seq型
 > 列 (Seq) トレイトは、長さ (length) があり、それぞれの要素に 0 から数えられた固定された添字 (index) がある Iterable の一種だ。
 
+- [演算 - 値取得](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#%E6%BC%94%E7%AE%97---%E5%80%A4%E5%8F%96%E5%BE%97)  
+  - [添字](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#i)  
+  - [.head](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#head)  
+  - [.headOption](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#headoption)
+  - [.last](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#last)
+  - [.lastOption](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#lastoption)
+  - [.tail](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#tail)
+  - [.init](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#init)
+- [演算 - 長さ取得](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#%E6%BC%94%E7%AE%97---%E9%95%B7%E3%81%95%E3%82%92%E5%8F%96%E5%BE%97)
+  - [.length](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#length)
+- [演算 - 存在確認](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#%E6%BC%94%E7%AE%97---%E5%AD%98%E5%9C%A8%E7%A2%BA%E8%AA%8D)
+  - [.exists(式)](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#exists%E5%BC%8F)
+  - [.contains()](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#contains)
+  - [.find(式)](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#find%E5%BC%8F)
+  - [.min](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#min)
+  - [.max](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#max)
+- [演算 - 加算](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#%E6%BC%94%E7%AE%97---%E5%8A%A0%E7%AE%97)
+  - +:
+  - [:+](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#-1)
+  - [++](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#-2)
+- [演算 - 加工](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#%E6%BC%94%E7%AE%97---%E5%8A%A0%E5%B7%A5)
+  - [.map(式)](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#map%E5%BC%8F)
+  - [.flatten](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#flatten)
+  - [.filter(式）]（https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#filter%E5%BC%8F）
+  - [.collect {case式}](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#collect--case%E5%BC%8F-)
+  - [.collectFirst](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#collectfirst--case%E5%BC%8F-)
+  - [.fildLeft(初期値)((acc, value) => 式)](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#foldleft%E5%88%9D%E6%9C%9F%E5%80%A4accumulator-value--%E5%BC%8F)
+  - [.foldRight(初期値)((value, acc) => 式)](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#foldright%E5%88%9D%E6%9C%9F%E5%80%A4value-accumulator--%E5%BC%8F)
+  - [.reduce((acc, value) => 式)](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#reduceaccumulator-value--%E5%BC%8F)
+  - [match式](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#match%E5%BC%8F)
+- [空のリストの作り方](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#%E7%A9%BA%E3%81%AE%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9)
+
 ## 演算 - 値取得
 ### `(i)`
 戻り値：Seqの中の値  
