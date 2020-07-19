@@ -45,4 +45,7 @@ object July19 {
   class Cafe(name: String, reccomend: String) extends Shop (name, reccomend)
 
   val cafe = new Cafe("Sccala Cafe", "Coffee")
+
+
+
 }

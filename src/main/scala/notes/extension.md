@@ -19,7 +19,7 @@
   - 振る舞いや見た目など、規格が決まっているものに対して使用しやすい。例えば、USBのようにサイズや差し込み口の形が決定しているもの。
 
 
-### class
+## class
 定義方法
 ```
 //スーパークラス
@@ -67,13 +67,13 @@ triangle.showShapeName()  //三角形
 triangle.draw()  //これは、青色の図形です。
 ```
 
-### case class
-#### case classを定義する
+## case class
+### case classを定義する
 ```
 case class クラス名(クラスパラメータ)
 ```
 
-#### case classを使う
+### case classを使う
 例1：クラスにcase classを継承
 ```
 //case classを定義
@@ -94,11 +94,11 @@ cafe.greetings //Scala Cafe へようこそ! おすすめは、Coffee です！
 ```
 
 
-### trait 
+## trait 
 classから、newでインスタンス化する機能を省いたもの。インスタンス化ができないので、パラメータを持たない。  
 クラスがトレイトを継承することをmixinという。
 
-#### traitを定義する
+### traitを定義する
 ```
 //宣言のみ
 trait HairColor
@@ -110,7 +110,7 @@ trait Namable {
 }
 ```
 
-#### traitを使う
+### traitを使う
 トレイトを定義し、継承する
 ```
 trait トレイト名 extends スーパートレイト1 with スーパートレイト2 { }
