@@ -1,6 +1,6 @@
 # Either 
 例外処理に使用する型。  
-第一パラメータ（Left）に「エラー」、第二パラメータ（Right）に成功の値を返す。　　
+第一パラメータ（Left）に「エラー」、第二パラメータ（Right）に成功の値を返す。  
 Optionでは情報が足りず、エラーが代数的データ型で定められているときに使う。　　
 
 ※代数的データ型：  
@@ -44,7 +44,7 @@ rightEither.left.getOrElse(0) // -> 0
 ```
 
 ### `.match式`
-戻り値：
+戻り値： 条件に合致したLeftまたはRightを、case式の結果に置き換えて出力
 ```
 //Either型の値を作成
 scala> val v:Either[String, Int] = Right(100)
