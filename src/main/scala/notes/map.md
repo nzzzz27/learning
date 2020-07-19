@@ -4,6 +4,24 @@
 Map(1 -> "鈴木", 2 -> "佐藤", 3 -> "山田")
 ```
 
+## 演算 - Mapを作成
+### `.empty`
+戻り値：空のMap()を作成。要素のあるMap()に対して使用すると、そのMap()を空にして返却する。
+```
+//例1：キーがInt型で値がString型のマップを作成
+scala> var emptyMap: Map[Int, String] = Map.empty
+emptyMap: Map[Int,String] = Map()
+
+// 新たに代入
+scala> emptyMap = Map(1 -> "one")
+mutated emptyMap
+
+
+//例2：要素のあるMap()に対して使用
+scala> Map(1 -> "apple", 2 -> "banana").empty
+val res31: scala.collection.immutable.Map[Int,String] = Map()
+```
+
 ## 演算 - 値を取得
 ### `.get(key)`
 戻り値：Option[A]型。値があればSome()、なければNone。
@@ -78,12 +96,6 @@ scala> Map(1 -> "鈴木", 2 -> "佐藤", 3 -> "高橋") - 3
 val res13: scala.collection.immutable.Map[Int,String] = Map(1 -> 鈴木, 2 -> 佐藤)
 ```
 
-### `.empty`
-戻り値：空のMap()。要素のあるMap()を空にして返却する。
-```
-scala> Map(1 -> "apple", 2 -> "banana").empty
-val res31: scala.collection.immutable.Map[Int,String] = Map()
-```
 
 ### `.mapValues(式)`
 戻り値：演算を適用した結果のvalueの入ったMap。   
