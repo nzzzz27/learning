@@ -1,4 +1,4 @@
-# Either 
+# [Either](https://github.com/scala/scala/blob/2.13.x/src/library/scala/util/Either.scala#L120) 
 例外処理に使用する型。  
 第一パラメータ（Left）に「エラー」、第二パラメータ（Right）に成功の値を返す。  
 Optionでは情報が足りず、エラーが代数的データ型で定められているときに使う。　　
