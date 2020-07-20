@@ -82,6 +82,13 @@ val after = leftEither.left.map(s => s"Error! - $s")
 println(after) // Left("Error! - invalid parameter")
 ```
 
+### RightとLeftの処理組み合わせ
+- EitherのRightに値があるときに、「.left.get」とすると、例外（NoSuchException)
+- EitherのRightに値があるときに、「.left.map(i => i)」とすると、Right(Rightの値) ... A
+- EitherのLeftに値があるときに、「.right.get」とすると、例外（NoSuchException）
+- EitherのLeftに値があるときに、「.right.map(i => i)」とすると、Left (Leftの値) ...B
+- 上記A,Bの場合、map内の値を加工する時は、エラーとなる
+
 
 
 
