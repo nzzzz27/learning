@@ -216,6 +216,38 @@ scala> Seq("A", "B", "C") ++ Seq("D", "E")
 val res47: Seq[String] = List(A, B, C, D, E)
 ```
 
+### `::`
+左辺の要素を右辺の先頭に追加する
+```
+val list1 = List(1, 2)
+val list2 = List(3, 4, 5)
+list1 :: list2  // => List(List(1, 2), 3, 4, 5)
+```
+抽出子としても使用できる
+```
+def printAll(chars: List[String]): Unit = { 
+   chars match {
+     case head :: Nil => println(head) 
+     case head :: tail => {
+       print(head)
+       printAll(tail)
+     }
+     case _ =>
+   }
+}
+printAll(List("H","e","l","l","o"))
+// "Hello"
+```
+
+### `:::`
+左辺のコレクションの中身を、右辺のコレクションの先頭から順に追加する
+```
+val list1 = List(1, 2)
+val list2 = List(3, 4, 5)
+list1 ::: list2 // =>  List(1, 2, 3, 4, 5)
+```
+
+
 ## 演算 - 加工
 ### `.map(式)`
 戻り値：式を適用した値をListに入れて返す。
