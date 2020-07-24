@@ -22,6 +22,8 @@
   - +:
   - [:+](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#-1)
   - [++](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#-2)
+  - [::](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#-3)
+  - [:::](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#-4)
 - [演算 - 加工](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#%E6%BC%94%E7%AE%97---%E5%8A%A0%E5%B7%A5)
   - [.map(式)](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#map%E5%BC%8F)
   - [.flatten](https://github.com/nzzzz27/scala-practice/blob/master/src/main/scala/notes/seq.md#flatten)
