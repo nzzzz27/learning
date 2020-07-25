@@ -20,7 +20,7 @@ class Point(var x: Int, y: Int) {
 コンストラクター：`class Point(var x: Int, var y: Int)`  
 メンバー：`x`, `y`, `move`, `toString`  
 フィールド：`var x`  
-クラスパラメータ：`y`（valやvarがない）　　
+クラスパラメータ：`y`（valやvarがない)  
 メゾット：`move`, `toString`  
 
 
@@ -88,7 +88,7 @@ user1.greet()
 //Hello, I am Tom and 20 years old
 ```
 
-//例3：インスタンスを引数に代入して使う
+例3：インスタンスを引数に代入して使う
 ```
 class Writer(val firstname: String, val surname: String, val year: Int) {
   def fullname(firstname: String = firstname, surname: String = surname): String = {
@@ -115,6 +115,17 @@ def main(args: Array[String]): Unit = {
 }
 ```
 
+## メゾットの書き方
+以下は同じ意味
+```
+class Shape(val width: Int, val height: Int) {
+  //thisを使うパターン
+  def calc(): Unit = println(this.width * this.height)
+
+  //引数に入れるパターン
+  def calc2(_width: Int = width, _height: Int = height): Unit = println(_width * _height)
+}
+```
 
 
 ## 参考
