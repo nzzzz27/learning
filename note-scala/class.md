@@ -1,21 +1,61 @@
 # class
-> Scalaにおけるクラスはオブジェクトを作るための設計図です。 クラスはメソッド、値、変数、型、オブジェクト、トレイト、クラスを持ち、それらはまとめて メンバー と呼ばれます。
-全てのクラスは、JavaのObjectクラスを暗黙的に継承している。  
-メンバーとしての要素をまとめるだけではなく、以下の機能もある。  
+- オブジェクトを作るための設計図  
+- メンバー（メソッド、値、変数、型、オブジェクト、トレイト、クラス）を持つことができる  
 - ユーザー独自の型を作成
 - スーパークラスになれる
+
+## クラスの用語
+```
+class Point(var x: Int, y: Int) {
+
+  def move(dx: Int, dy: Int): Unit = {
+    x = x + dx
+    y = y + dy
+  }
+
+  override def toString: String =
+    s"($x, $y)"
+}
+```
+コンストラクター：`class Point(var x: Int, var y: Int)`  
+メンバー：`x`, `y`, `move`, `toString`  
+フィールド：`var x`  
+クラスパラメータ：`y`（valやvarがない）　　
+メゾット：`move`, `toString`  
 
 
 ## クラスを定義する
 ```
-//例1：コンストラクターなし
+//例1：コンストラクタなし
 class User 
 
 //例2：コンストラクターあり
 class User(val name: String, val age: Int)
 
+//例3：クラスパラメータ
+class User(name: String, age: Int)
+
 //例3：デフォルト値の入ったコンストラクター
 class User(var name: String = "No Name", var age: Int = 20)
+```
+
+### フィールドとクラスパラメータの違い
+フィールド：`val` / `var`を付けて宣言。コンストラクタの外からも参照できる。  
+クラスパラメータ：`var` / `val`を付けて宣言。コンストラクタ内でしか参照できない。  
+
+```
+//クラスパラメータ
+class Point(x: Int, y: Int)
+val point = new Point(1, 2)
+
+point.x  // error: value x is not a member of Point
+```
+```
+//フィールド
+class Point(val x: Int, val y: Int)
+val point = new Point(1, 2)
+
+point.y //2
 ```
 
 ## クラスを使う
@@ -48,30 +88,33 @@ user1.greet()
 //Hello, I am Tom and 20 years old
 ```
 
-## クラスパラメータのスコープ
-val や var が存在しないパラメーターはクラス内でだけで参照できるプライベートな値や変数となる。
+//例3：インスタンスを引数に代入して使う
 ```
-//クラスを定義、インスタンス化
-class Point(x: Int, y: Int)
-val point = new Point(1, 2)
+class Writer(val firstname: String, val surname: String, val year: Int) {
+  def fullname(firstname: String = firstname, surname: String = surname): String = {
+    firstname + " " + surname
+  }
+}
 
-//アクセスする
-point.x  // error: value x is not a member of Point
+class Novel(val name: String, val yearOfRelease: Int, val author: Writer) {
+  def authorAge(): Int = {
+    yearOfRelease - author.year
+  }
+  def isWrittenBy(): String = {
+    author.fullname()
+  }
+}
+
+def main(args: Array[String]): Unit = {
+  val author = new Writer("J.K", "Rolling", 1965)
+  println(author.fullname())
+
+  val novel = new Novel("Harry Potter", 1977, author)
+  println(novel.authorAge)
+  println(novel.isWrittenBy)
+}
 ```
 
-プライマリコンストラクタのval と var を持つパラメーターはパブリックになります。 しかしながらval は不変となるため、以下のように記述することはできません。
-```
-//クラス定義、インスタンス化
-class Point(val x: Int, val y: Int)
-val point = new Point(1, 2)
-
-//値にアクセス
-scala> Point.x
-val res0: Int = 1
-
-//値を上書き
-point.x = 3  // error: reassignment to val
-```
 
 
 ## 参考
