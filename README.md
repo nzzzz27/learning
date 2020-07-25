@@ -1,6 +1,25 @@
 # 目次
-- [note](https://github.com/nzzzz27/scala-practice/tree/master/src/main/scala/notes)
-- [practice-code](https://github.com/nzzzz27/scala-practice/tree/master/src/main/scala/practice-codes)
+## [note-scala](https://github.com/nzzzz27/scala-practice/tree/master/note-scala)
+- [オブジェクト](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/object.md)  
+- [クラス](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/class.md)  
+- [継承](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/extension.md)
+- [コレクション](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/collections.md)
+  - [Map](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/map.md)
+- [名前渡し/参照渡し](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/callByName-callByValue.md)
+- 例外処理
+  - [Option](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/option.md)
+  - [Either](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/either.md)
+- [文字列の演算子](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/string.md)
+- [特殊なメゾット記法](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/method-notations.md)
+
+## [note-sql](https://github.com/nzzzz27/scala-practice/tree/master/note-sql)
+- [インストール・起動・ユーザー作成など、設定](https://github.com/nzzzz27/scala-practice/blob/master/note-sql/settings.md)
+- [SQLの型](https://github.com/nzzzz27/scala-practice/blob/master/note-sql/commands.md)
+- [GRANT文、REVOKE文（権限設定）](https://github.com/nzzzz27/scala-practice/blob/master/note-sql/dcl.md)
+- [データベース定義](https://github.com/nzzzz27/scala-practice/blob/master/note-sql/ddl.md)
+- [既存データベースの操作](https://github.com/nzzzz27/scala-practice/blob/master/note-sql/dml.md)
+
+## [practice-code](https://github.com/nzzzz27/scala-practice/tree/master/src/main/scala/practice-codes)
 
 # 使用環境
 macOS Catalina v10.15.5
