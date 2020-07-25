@@ -26,21 +26,28 @@ class Point(var x: Int, y: Int) {
 
 ## クラスを定義する
 ```
-//例1：コンストラクタなし
+//例1：デフォルトコンストラクタ
 class User 
 
-//例2：コンストラクターあり
+//例2：フィールドあり
 class User(val name: String, val age: Int)
 
 //例3：クラスパラメータ
 class User(name: String, age: Int)
 
-//例3：デフォルト値の入ったコンストラクター
+//例3：デフォルト値ありのフィールド
 class User(var name: String = "No Name", var age: Int = 20)
 ```
 
 ### フィールドとクラスパラメータの違い
 フィールド：`val` / `var`を付けて宣言。コンストラクタの外からも参照できる。  
+```
+//フィールド
+class Point(val x: Int, val y: Int)
+val point = new Point(1, 2)
+
+point.y //2
+```
 クラスパラメータ：`var` / `val`を付けて宣言。コンストラクタ内でしか参照できない。  
 
 ```
@@ -49,13 +56,6 @@ class Point(x: Int, y: Int)
 val point = new Point(1, 2)
 
 point.x  // error: value x is not a member of Point
-```
-```
-//フィールド
-class Point(val x: Int, val y: Int)
-val point = new Point(1, 2)
-
-point.y //2
 ```
 
 ## クラスを使う
