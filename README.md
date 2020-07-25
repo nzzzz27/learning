@@ -1,3 +1,11 @@
+# よく見るサイト
+- [Scala公式ドキュメント（日本語）](https://docs.scala-lang.org/ja/)
+- [Scala定義](https://github.com/scala/scala/tree/2.13.x/src/library/scala)
+- [Scala定義 - util](https://github.com/scala/scala/tree/2.13.x/src/library/scala/util)
+- [scala-text](https://hexx.github.io/scala_text/)
+- [Hishidamaさんのサイト](http://www.ne.jp/asahi/hishidama/home/tech/scala/index.html)
+- [is99: Ninety-Nine Scala Problems](http://aperiodic.net/phil/scala/s-99/)：問題集
+
 # 目次
 ## [note-scala](https://github.com/nzzzz27/scala-practice/tree/master/note-scala)
 - [オブジェクト](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/object.md)  
@@ -21,6 +29,7 @@
 
 ## [practice-code](https://github.com/nzzzz27/scala-practice/tree/master/src/main/scala/practice-codes)
 
+
 # 使用環境
 macOS Catalina v10.15.5
 node v12.18.2  
@@ -30,8 +39,5 @@ sbt v1.3.12
 環境構築参考：  
 https://scala-text.github.io/scala_text/sbt-compile-execute.html
 
-
-# 使用サイト
-[is99: Ninety-Nine Scala Problems](http://aperiodic.net/phil/scala/s-99/)  
 
 
