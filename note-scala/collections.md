@@ -2,15 +2,15 @@
 複数の値を持つことができるクラス。
 Collectionにあたるクラスは、以下のパッケージに内包されている。
 
-- `scala.collection.immutable`
+## `scala.collection.immutable`
 不変なコレクションのパッケージ。明記されない場合はこちらのパッケージが適用される。  
 ![scala.collection.immutable](https://docs.scala-lang.org/resources/images/tour/collections-immutable-diagram-213.svg)
 
-- `scala.collection.mutable`
+## `scala.collection.mutable`
 可変なコレクションのパッケージ。使用時には明示的にimportしなければいけない。    
 ![scala.collection.mutable](https://docs.scala-lang.org/resources/images/tour/collections-mutable-diagram-213.svg)  
 
-- `scala.collection`
+## `scala.collection`
 不変、可変コレクションのスーパークラスのパッケージで、両方のコレクションを含む。  
 これらは全て、abstract classまたはtrait。   
 ![scala.collection](https://docs.scala-lang.org/resources/images/tour/collections-diagram-213.svg)  
