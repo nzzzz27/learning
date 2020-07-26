@@ -315,6 +315,7 @@ val res50: Int = 10
 
 ### `.reduce((accumulator, value) => 式)`
 要素同士を左から順に演算した結果を返す。初期値がないので、要素がない場合は例外を返す。
+
 ```
 //例1
 scala> Seq(1, 2, 3, 4, 5).reduce((x, y) => x + y)
@@ -341,7 +342,25 @@ val l3 = List.empty[Int]
 val l4 = List[Int]()
 ```
 
+## `for`/`foreach`/`map`の違い
+いずれも、コレクションの要素を加工してコレクションに返すことができるが、戻り値の型が異なる。  
+```
+val intList: List[Int] = List(1, 2, 3, 4, 5)
+
+//map
+val aMap: List[Int] = intList.map(_ * 2)
+List(2, 4, 6, 8, 10)
+
+//foreach
+val aForeach: Unit = intList.foreach(_ * 2)
+()
+
+//for yield
+val aFor: Seq[Int] = for (i <- 1 to intList.length) yield (i * 2)
+Vector(2, 4, 6, 8, 10)
+```
 
 ## 参考
-[列トレイト SEQ、INDEXEDSEQ、および LINEARSEQ](https://docs.scala-lang.org/ja/overviews/collections/seqs.html)
+- [列トレイト SEQ、INDEXEDSEQ、および LINEARSEQ](https://docs.scala-lang.org/ja/overviews/collections/seqs.html)
+
 
