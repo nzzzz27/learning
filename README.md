@@ -12,6 +12,7 @@
 - [クラス](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/class.md)  
 - [継承](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/extension.md)
 - [コレクション](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/collections.md)
+  - [コレクションのメゾット](https://github.com/nzzzz27/learning/blob/master/note-scala/collection-methods.md)
   - [Map](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/map.md)
 - [名前渡し/参照渡し](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/callByName-callByValue.md)
 - 例外処理
