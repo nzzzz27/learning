@@ -1,5 +1,8 @@
 # Object
-Scalaでは、全ての値がオブジェクト。すべてのメゾットは何らかのオブジェクトに所属している。  
+Scalaでは全ての値がオブジェクト。すべてのメゾットは何らかのオブジェクトに所属している。  
+また、**Scalaのオブジェクトは全てシングルトンオブジェクト**である。  
+
+シングルトンオブジェクトとは、1つのインスタンスしか生成することができないオブジェクトのこと。  
 
 ```
 //定義
@@ -11,30 +14,31 @@ object オブジェクト名 {
 オブジェクト名.smaple  //sample
 ```
 
-## シングルトンオブジェクト
-一つのインスタンスしか生成することができないオブジェクトのこと。Scalaのオブジェクトは、シングルトンオブジェクト。  
 
+シングルトンオブジェクトのため、`new`を用いたインスタンス化はできない。  
 ```
-scala> class Person  //型 + 唯一のインスタンス
-class Person
+//オブジェクトを定義
+scala> object Animal {
+     |  val spieces: String = "dog"
+     |  def bark(): Unit = println("Bow wow")
+     | }
 
-scala> val mary = Person
-val mary: Person.type = Person$@62ddef7c
+//newでインスタンス化しようとするとエラーとなる
+scala> new Animal
+                      ^
+       error: not found: type Animal
 
-scala> val tom = Person
-val tom: Person.type = Person$@62ddef7c
-
-scala> mary == tom　//同じインスタンスなので、trueとなる。
-val res0: Boolean = true
+//正しい呼び出し方
+scala> Animal
+Animal.type = Animal$@1e7bf1d
 ```
 
-classで宣言したクラスは複数のインスタンスを生成できるが、objectで宣言されたクラスは一つのインスタンスしか生成できない。  
-
-## コンパニオンオブジェクト
+## コンパニオンオブジェクト / コンパニオンクラス
 - クラスと同じ名前、同じスコープを持つオブジェクトのこと
 - 逆に、そのクラスは、オブジェクトのコンパニオンクラスと呼ばれる  
 - コンパニオンクラスやコンパニオンオブジェクトは自身の**コンパニオンのプライベートメンバーにアクセスできる**  
 - コンパニオンクラスのインスタンスに特定されないメソッドや値にはコンパニオンオブジェクトを使う  
+- **シングルトンオブジェクトは、コンパニオンクラスによって独自の型を作ることができる**。
 
 ```
 class PersonalInfo (
@@ -51,8 +55,11 @@ object PersonalInfo {
 PersonalInfo.showSecrets
 ```
 
+## スタンドアロンオブジェクト
+- コンパニオンクラスと同じ名前を共有しないシングルトンオブジェクトのこと。  
+- 関連するユーティリティメゾットのコレクションを作るときや、Scalaアプリケーションのエントリーポイントを定義する時などに使われる。  
 
 ## 参照
 [Udemy: 3-14 Scala Objects](https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/learn/lecture/7660652#questions)  
 [[Scala] シングルトンオブジェクトとコンパニオンオブジェクト](https://qiita.com/kingzer0314/items/a6b82034f760f024fdfa)  
-
+コップ本 P.83~
