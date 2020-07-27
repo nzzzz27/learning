@@ -70,7 +70,7 @@ def onComplete[U](f: Try[T] => U)(implicit executor: ExecutionContext): Unit
 ```
 
 
-### `[.andThen]`(https://github.com/scala/scala/blob/a6e1a6f476f26f66ae1c3848033e95f6b173ad56/src/library/scala/concurrent/Future.scala#L497)
+### [.andThen](https://github.com/scala/scala/blob/a6e1a6f476f26f66ae1c3848033e95f6b173ad56/src/library/scala/concurrent/Future.scala#L497)
 戻り値：Future型
 
 定義
