@@ -16,6 +16,7 @@
   - [Map](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/map.md)
 - [名前渡し/参照渡し](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/callByName-callByValue.md)
 - 例外処理
+  - [throwableクラス](https://github.com/nzzzz27/learning/blob/master/note-scala/throwable.md)
   - [Option](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/option.md)
   - [Either](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/either.md)
 - [文字列の演算子](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/string.md)
