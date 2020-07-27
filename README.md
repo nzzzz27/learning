@@ -20,6 +20,9 @@
   - [Either](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/either.md)
 - [文字列の演算子](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/string.md)
 - [特殊なメゾット記法](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/method-notations.md)
+- [Future](https://github.com/nzzzz27/learning/blob/master/note-scala/future.md)
+  - [Execution Context](https://github.com/nzzzz27/learning/blob/master/note-scala/future-executionContext.md)
+  - [Futureのメゾット](https://github.com/nzzzz27/learning/blob/master/note-scala/future-methods.md)
 
 ## [note-sql](https://github.com/nzzzz27/scala-practice/tree/master/note-sql)
 - [インストール・起動・ユーザー作成など、設定](https://github.com/nzzzz27/scala-practice/blob/master/note-sql/settings.md)
