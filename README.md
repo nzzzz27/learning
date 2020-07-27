@@ -8,9 +8,13 @@
 
 # 目次
 ## [note-scala](https://github.com/nzzzz27/scala-practice/tree/master/note-scala)
-- [オブジェクト](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/object.md)  
-- [クラス](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/class.md)  
-- [継承](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/extension.md)
+- オブジェクト・クラス・タプル
+  - [オブジェクト](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/object.md)  
+  - [クラス](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/class.md)  
+  - [case class](https://github.com/nzzzz27/learning/blob/master/note-scala/case-class.md)
+  - [tuple](https://github.com/nzzzz27/learning/blob/master/note-scala/tuple.md)
+  - [継承](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/extension.md)
+  - [trait, aabstract class, case classの違い](https://github.com/nzzzz27/learning/blob/master/note-scala/extension-difference.md)
 - [コレクション](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/collections.md)
   - [コレクションのメゾット](https://github.com/nzzzz27/learning/blob/master/note-scala/collection-methods.md)
   - [Map](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/map.md)
