@@ -30,6 +30,9 @@ $ mysql.server status
 //rootユーザーでログイン
 $ mysql -uroot
 
+//rootユーザーで、パスワードありでログイン
+$ mysql -u root -p
+
 //作成したユーザーでログイン
 $ mysql -u maki -p
 
