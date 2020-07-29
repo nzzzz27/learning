@@ -20,6 +20,9 @@ $ mysql.server start --skip-grant-tables
 
 //停止
 $ mysql.server stop 
+
+//起動状況確認
+$ mysql.server status
 ```
 
 # ログイン・ログアウト
@@ -44,6 +47,24 @@ mysql> create user 'ユーザー名'@localhost identified by 'パスワード';
 //ユーザー削除
 mysql> drop user 'ユーザー名'@localhost;
 ```
+# トラブル
+## `mysqld_safe A mysqld process already exists`
+macにある、`launchctl`という仕組みにmysqlが登録されていることが原因。  
+以下のコマンドで監視を外す。  
+```
+//launchctlの監視下になっていることを確認
+❯ launchctl list | grep mysql
+30154   0       homebrew.mxcl.mysql
+
+//監視から外す
+❯ brew services stop mysql
+Stopping `mysql`... (might take a while)
+==> Successfully stopped `mysql` (label: homebrew.mxcl.mysql)
+
+//再登録
+brew services start サービス名
+```
+参考：[brewでインストールしたmysqlが勝手に再起動するのを直す](https://qiita.com/Komei22/items/31a3db6d5b803ef5082b)
 
 
 # 参考
