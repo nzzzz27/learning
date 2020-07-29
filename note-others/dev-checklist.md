@@ -36,7 +36,7 @@ $font-color-base; #333; ... ng
 $space-small: 8px;
 ```
 
-# Pull Request
+## Pull Request
 - ブランチとプルリクは基本的にチケットベースで作成しているか。
   - 修正箇所が多い場合は、PRを細かく分ける
 - ブランチ名の命名規則は正しいか
