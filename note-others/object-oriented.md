@@ -92,7 +92,7 @@ class Dog {
 
 
 ### ポリモーフィズム
-曖昧な命令に対する最適な処置をプログラム側が判断して行うこと。  
+あるオブジェクトへの操作が呼び出し側ではなく、受け手のオブジェクトによって定まる特性  
 
 例：  
 - オーバーロード：引数の方や数によって最適なメゾットが選ばれる  
@@ -105,5 +105,5 @@ class Dog {
 - [youtube - カプセル化](https://www.youtube.com/watch?v=7N6AyOJbc6w)
 - [youtube - 継承](https://www.youtube.com/watch?v=9VAJ_KIzSGo)
 - [youtube - ポリモーフィズム](https://www.youtube.com/watch?v=YuXOc7R8q7c)
-
+- [オブジェクト指向と関数型プログラミング言語の話](https://github.com/hatena/Hatena-Textbook/blob/master/foundation-of-programming-scala.md#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%81%A8%E9%96%A2%E6%95%B0%E5%9E%8B%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E%E3%81%AE%E8%A9%B1)
 
