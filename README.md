@@ -5,6 +5,7 @@
 - [scala-text](https://hexx.github.io/scala_text/)
 - [Hishidamaさんのサイト](http://www.ne.jp/asahi/hishidama/home/tech/scala/index.html)
 - [is99: Ninety-Nine Scala Problems](http://aperiodic.net/phil/scala/s-99/)：問題集
+- [Cheetsheet](https://docs.google.com/spreadsheets/d/1ifcFl3JZNo8s0VfTYDV3LbYiyrUcQoxJ7igmsWg7VIA/edit#gid=0)
 
 # 目次
 ## [note-scala](https://github.com/nzzzz27/scala-practice/tree/master/note-scala)
