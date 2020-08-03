@@ -1,13 +1,27 @@
 # 提出前の確認事項
 ## scala 
 - インデントは揃っているか
+  - 変数定義
+  - 型の位置
+  - =>の位置
+
+- 後から見返してもわかりやすいコードか
 ```
-//変数定義
+//Not Good
+numOpt match {
+   case Some(n) if n >= 10 => println("A")
+   case Some(n) if n <= 4  => println("C")
+   case None               => println("D")
+    case _                  => println("B")
+}
 
-//型の位置
-
-// =>の位置
-
+//Good
+numOpt match  {
+  case Some(x) if(x >= 10)           => "a"
+  case Some(y) if(y >=  5 && y <= 9) => "b"
+  case Some(_)                       => "c"
+  case None                          => "d"
+}
 ```
 
 ## css
