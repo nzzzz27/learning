@@ -8,9 +8,12 @@
 - [Cheetsheet](https://docs.google.com/spreadsheets/d/1ifcFl3JZNo8s0VfTYDV3LbYiyrUcQoxJ7igmsWg7VIA/edit#gid=0)
 
 # 目次
-## [note-others]
-- [関数型プログラミング](https://github.com/nzzzz27/learning/blob/master/note-others/functional-launguage.md)
-- [オブジェクト指向](https://github.com/nzzzz27/learning/blob/master/note-others/object-oriented.md)
+## note-others
+- [プログラミングパラダイム](https://github.com/nzzzz27/learning/blob/master/note-others/language-list.md)
+  - [関数型プログラミング](https://github.com/nzzzz27/learning/blob/master/note-others/language-functional.md)
+  - [オブジェクト指向](https://github.com/nzzzz27/learning/blob/master/note-others/language-object.md)
+  - [手続き型言語](https://github.com/nzzzz27/learning/blob/master/note-others/language-procedural.md)
+- [MVCモデル](https://github.com/nzzzz27/learning/blob/master/note-others/design_mvc.md)
 ## [note-scala](https://github.com/nzzzz27/scala-practice/tree/master/note-scala)
 - オブジェクト・クラス・タプル
   - [オブジェクト](https://github.com/nzzzz27/scala-practice/blob/master/note-scala/object.md)  
