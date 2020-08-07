@@ -7,12 +7,25 @@ Play アプリケーションには、各 URL あたり 1 つのエントリー�
 ## デフォルトパッケージ
 
 ### [BaseController](https://www.playframework.com/documentation/2.7.x/api/scala/play/api/mvc/BaseController.html)
-アクションおよび結果タイプを生成するユーティリティメソッドを定義する。
+アクションの結果を生成するユーティリティメソッドを定義する。
 ```
 import play.api.mvc.BaseController
 ```
 ```
-def list() =  Action { implicit request: Request[AnyContent] =>
-  ...
+class HomeController @Inject() (val controllerComponents: ControllerComponents) extends BaseController {
+  
+  def hello(name:String) = Action { request =>
+    //リクエスト結果がOKの時の処理
+    Ok("Hello " + name)
+  }
+
 }
 ```
+
+## `@routes`
+> Playがデフォルトでcontrollers.routesをインポートしているために{controllers}が省略されたものです。
+
+# 疑問
+> 今回は controllers.tweet.routes.... を呼び出したいので
+https://christina-inching-triceps.github.io/codelabs/play-handson-lesson1/index.html#4
+なぜ？
