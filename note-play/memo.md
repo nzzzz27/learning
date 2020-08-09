@@ -25,7 +25,15 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents) 
 ## `@routes`
 > Playがデフォルトでcontrollers.routesをインポートしているために{controllers}が省略されたものです。
 
-# 疑問
-> 今回は controllers.tweet.routes.... を呼び出したいので
-https://christina-inching-triceps.github.io/codelabs/play-handson-lesson1/index.html#4
-なぜ？
+
+## URLの意味
+```
+controllers.tweet.TweetController.register 
+// controllers.tweet => controllers/tweet
+// TweetController.register => TweetControllerクラスのregisterメゾット
+
+views.html.tweet.list(tweets)
+// views.html => views/
+// tweet.list() => tweet/list.scala.html
+```
+

@@ -23,7 +23,7 @@ import play.api.data.validation.Constraints._
 ## Form Basics
 ![...](https://www.playframework.com/documentation/2.8.x/resources/manual/working/scalaGuide/main/forms/images/lifecycle.png)
 
-### 1.Defining a form
+### Defining a form
 フォームに必要な要素を含むケースクラスを定義します。  
 
 ここでは、ユーザーの名前と年齢を取得したいので、UserDataオブジェクトを作成します。
@@ -127,6 +127,10 @@ def index = Action { implicit request =>
 ```
 いくつかの入力ヘルパーは、views.html.helperパッケージにあります。それらにフォームフィールドを入力すると、対応するHTML入力が表示され、値、制約が設定され、フォームバインディングが失敗したときにエラーが表示されます。  
 
+Note:  
+テンプレートで`import helper._`を使用して、ヘルパーの前に`@helper`を付けることを回避できます。
+
+
 入力ヘルパーはいくつかありますが、最も役立つものは次のとおりです。  
 - form: renders a form element.
 - inputText: renders a text input element.
@@ -163,10 +167,109 @@ Note:
 
 
 ### Passing MessagesProvider to Form Helpers
+上記のフォームヘルパー（入力、チェックボックスなど）はすべて、暗黙のパラメーターとして[MessagesProvider](https://www.playframework.com/documentation/2.8.x/api/scala/play/api/i18n/MessagesProvider.html)を取ります。これは、リクエストで定義された言語にマッピングされたエラーメッセージを提供する必要があるためです。  
+
+メッセージの詳細については、[メッセージによる国際化のページ](https://www.playframework.com/documentation/2.8.x/ScalaI18N)をご覧ください。  
+
+必要なMessagesProviderオブジェクトを渡すには2つの方法があります。  
 
 #### Option One: Implicitly Convert Request to Messages
+最初の方法は、コントローラーに[play.api.i18n.I18nSupport](https://www.playframework.com/documentation/2.8.x/api/scala/play/api/i18n/I18nSupport.html)を拡張させることです。これは、Injectされた[MessagesApi](https://www.playframework.com/documentation/2.8.x/api/scala/play/api/i18n/MessagesApi.html)を利用し、暗黙的な要求を暗黙的なメッセージに暗黙的に変換します。  
+```
+class MessagesController @Inject() (cc: ControllerComponents)
+    extends AbstractController(cc)
+    with play.api.i18n.I18nSupport {
+  import play.api.data.Form
+  import play.api.data.Forms._
+
+  val userForm = Form(
+    mapping(
+      "name" -> text,
+      "age"  -> number
+    )(views.html.UserData.apply)(views.html.UserData.unapply)
+  )
+
+  def index = Action { implicit request =>
+    Ok(views.html.user(userForm))
+  }
+}
+```
+
+つまり、次のフォームテンプレートが解決されます。
+```
+@(userForm: Form[UserData])(implicit request: RequestHeader, messagesProvider: MessagesProvider)
+
+@import helper._
+
+@helper.form(action = routes.FormController.post()) {
+@CSRF.formField                     @* <- takes a RequestHeader    *@
+@helper.inputText(userForm("name")) @* <- takes a MessagesProvider *@
+@helper.inputText(userForm("age"))  @* <- takes a MessagesProvider *@
+}
+```
 
 #### Option Two: Use MessagesRequest
+2番目の方法は、MessagesRequestを提供する[MessagesActionBuilder](https://www.playframework.com/documentation/2.8.x/api/scala/play/api/mvc/MessagesActionBuilder.html)を依存性注入することです。
+```
+// Example form injecting a messagesAction
+class FormController @Inject() (messagesAction: MessagesActionBuilder, components: ControllerComponents)
+    extends AbstractController(components) {
+  import play.api.data.Form
+  import play.api.data.Forms._
+
+  val userForm = Form(
+    mapping(
+      "name" -> text,
+      "age"  -> number
+    )(views.html.UserData.apply)(views.html.UserData.unapply)
+  )
+
+  def index = messagesAction { implicit request: MessagesRequest[AnyContent] =>
+    Ok(views.html.messages(userForm))
+  }
+
+  def post() = TODO
+}
+```
+
+フォームでCSRFを使用するには、リクエスト（技術的にはRequestHeader）とメッセージオブジェクトの両方がテンプレートで使用できる必要があるため、これは便利です。  
+[MessagesProvider](https://www.playframework.com/documentation/2.8.x/api/scala/play/api/i18n/MessagesProvider.html)を拡張するWrappedRequestであるMessagesRequestを使用することで、テンプレートで使用できるようにする必要がある暗黙のパラメーターは1つだけです。
+
+通常、リクエストの本文は必要ないため、`MessagesRequest [_]`と入力する代わりに、[MessagesRequestHeader](https://www.playframework.com/documentation/2.8.x/api/scala/play/api/mvc/MessagesRequestHeader.html)を渡すことができます。  
+```
+@(userForm: Form[UserData])(implicit request: MessagesRequestHeader)
+
+@import helper._
+
+@helper.form(action = routes.FormController.post()) {
+  @CSRF.formField                     @* <- takes a RequestHeader    *@
+  @helper.inputText(userForm("name")) @* <- takes a MessagesProvider *@
+  @helper.inputText(userForm("age"))  @* <- takes a MessagesProvider *@
+}
+```
+コントローラーにMessagesActionBuilderを注入するのではなく、MessagesAbstractControllerを拡張してフォーム処理をコントローラーに組み込むことにより、MessagesActionBuilderをデフォルトのアクションにすることもできます。
+```
+// Form with Action extending MessagesAbstractController
+class MessagesFormController @Inject() (components: MessagesControllerComponents)
+    extends MessagesAbstractController(components) {
+  import play.api.data.Form
+  import play.api.data.Forms._
+
+  val userForm = Form(
+    mapping(
+      "name" -> text,
+      "age"  -> number
+    )(views.html.UserData.apply)(views.html.UserData.unapply)
+  )
+
+  def index = Action { implicit request: MessagesRequest[AnyContent] =>
+    Ok(views.html.messages(userForm))
+  }
+
+  def post() = TODO
+}
+```
+
 
 ### Displaying errors in a view template
 フォームのエラーは、Map [String、FormError]の形式をとります。  
