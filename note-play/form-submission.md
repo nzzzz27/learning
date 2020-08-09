@@ -20,7 +20,7 @@ import play.api.data.validation.Constraints._
 ```
 
 ## Form Basics
-![https://www.playframework.com/documentation/2.8.x/resources/manual/working/scalaGuide/main/forms/images/lifecycle.png]
+![...](https://www.playframework.com/documentation/2.8.x/resources/manual/working/scalaGuide/main/forms/images/lifecycle.png)
 
 ### 1.Defining a form
 フォームに必要な要素を含むケースクラスを定義します。  
