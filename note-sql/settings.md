@@ -36,6 +36,9 @@ $ mysql -u root -p
 //作成したユーザーでログイン
 $ mysql -u maki -p
 
+//rootユーザーで、パスワード付きでログイン
+$ mysql -u root -proot
+
 //ログアウト
 mysql> exit
 mysql> quit
