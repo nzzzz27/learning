@@ -182,3 +182,7 @@ Play はリクエストが CSRF リクエストでないことを検証する複
 
 7-B. [アクションごとにフィルタを設定](https://www.playframework.com/documentation/ja/2.4.x/ScalaCsrf#%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%94%E3%81%A8%E3%81%AB-CSRF-%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%92%E9%81%A9%E7%94%A8%E3%81%99%E3%82%8B)
 
+
+## DB接続（MySQL）
+- [SQLデータベース](https://www.playframework.com/documentation/ja/2.3.x/JavaDatabase)
+- [docker-composeで接続](https://qiita.com/LazyHippos/items/58d0f98a15656ed65136)
