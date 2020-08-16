@@ -1,5 +1,6 @@
 # Play-slick
-playでslickを使うためのプラグイン。  
+SlickをPlayのライフサイクルに組み込んでくれるツール。  
+設定情報からDB connectionを作成したり破棄したりの管理を良い感じにやってくれる  
 
 - [Play公式ドキュメントのSlickの説明](https://www.playframework.com/documentation/2.8.x/PlaySlick#DatabaseConfig-via-runtime-dependency-injection)
 
@@ -97,9 +98,62 @@ slick {
 ## [使い方](https://www.playframework.com/documentation/2.8.x/PlaySlick#Usage0)
 
 
-## slick-codegen
-PlayでDataBaseに接続する時に使用するSlickのTableと入出力で使用するインスタンスのcase classのコードを、DBのスキーマから自動生成してくれるツール
+## [Slick-codegen](https://scala-slick.org/doc/3.2.1/code-generation.html)
+PlayでDataBaseに接続する時に使用するSlickのTableと入出力で使用するインスタンスのcase classのコードを、DBのスキーマから自動生成してくれるツール。  
+DBとの接続に必要。  
 
+単独で使う方法と、`build.sbt`と統合させる使い方がある。  
+デフォルトでは、コードジェネレーターは、テーブルクラス、対応するTableQuery値を生成します。これらは、コレクションのような方法で使用でき、値の完全な行を保持するためのケースクラスも同様です。
+
+### スキーマとは
+データベースの構造で、『データベースの設計図』。  
+『外部スキーマ』『概念スキーマ』『内部スキーマ』の3構造に分けられる。  
+
+- 外部スキーマ：概念スキーマで定義された論理データから、必要なデータを取り出したビューなどに相当する部分
+- 概念スキーマ：データベース上の論理データで、保持するデータの要素や、データ同士の関係を定義するテーブルに相当する部分
+- 内部スキーマ：概念スキーマで定義された論理データを、具体的にどのように格納するかを定義する部分
+
+参考サイト：  
+- [データベースのスキーマとは？初心者でも理解できる解説](https://offers.jp/media/programming/a_786)
+
+### 使い方1：[Stand alone](https://scala-slick.org/doc/3.2.1/code-generation.html#standalone-use)
+#### 1. `build.sbt`にライブラリを追加
+```
+// build.sbt
+libraryDependencies += "com.typesafe.slick" %% "slick-codegen" % "3.2.1"
+```
+
+#### 2. 実行するためのコードを書く
+詳しい書き方は公式サイトを参照。  
+```
+// app/tasks/SlickCodeGen.scala 
+// (ファイル名は任意)
+slick.codegen.SourceCodeGenerator.main(
+  Array(uri, outputFolder)
+)
+```
+```
+uri: Config URL and/or fragment for path in typesafe config, e.g. url#slick.db.default
+profile: Fully qualified name of the profile class, e.g. slick.jdbc.H2Profile
+jdbcDriver: Fully qualified name of the JDBC driver class, e.g. org.h2.Driver
+url: JDBC url, e.g. jdbc:postgresql://localhost/test
+outputFolder: Place where the package folder structure should be put
+pkg: Scala package the generated code should be places in
+user: database connection user name
+password: database connection password
+```
+
+### 使い方2：[sbtに結合する](https://scala-slick.org/doc/3.2.1/code-generation.html#integrated-into-sbt)
+公式サイトを参照。  
+
+
+### [カスタマイズ](https://scala-slick.org/doc/3.2.1/code-generation.html#customization)
+コードジェネレーターの実装は、完全な出力のさまざまなフラグメントを処理するサブジェネレーターの小さな階層に構造化されています。  
+各サブジェネレーターの実装は、対応するファクトリーメソッドをオーバーライドすることにより、カスタマイズされたものと交換できます。
+
+[SouceCodeGenerator](https://scala-slick.org/doc/3.2.1/codegen-api/index.html#slick.codegen.SourceCodeGenerator)には、各テーブルのサブジェネレータを生成するためのTableメゾットが内包されている。  
+
+カスタマイズの詳細は、SourceCodeGen APIのページを参照する。  
 
 
 ## TypesafeConfig
