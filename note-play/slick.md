@@ -5,7 +5,7 @@ playでslickを使うためのプラグイン。
 
 
 ## 導入手順
-1. [Set up](https://www.playframework.com/documentation/2.8.x/PlaySlick#Setup)
+### 1. [Set up](https://www.playframework.com/documentation/2.8.x/PlaySlick#Setup)
 ```
 // build.sbt
 
@@ -25,7 +25,7 @@ libraryDependencies ++= Seq(
 )
 ```
 
-### [Play Database Evolutions](https://www.playframework.com/documentation/2.8.x/Evolutions)とは 
+#### [Play Database Evolutions](https://www.playframework.com/documentation/2.8.x/Evolutions)とは 
 データベースを扱うためにPlayが提供しているライブラリ。  
 evolutions はデータベースのマイグレーションをおこなうためのライブラリです。  
 
@@ -37,21 +37,21 @@ evolutions はデータベースのマイグレーションをおこなうため
 - [3. データベースマイグレーション](https://densan-labs.net/tech/codefirst/migration.html#:~:text=%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%82%92%E5%89%8A%E9%99%A4%E3%81%97%E3%81%A6,%E5%89%8A%E9%99%A4%E3%81%95%E3%82%8C%E3%81%A6%E3%81%97%E3%81%BE%E3%81%84%E3%81%BE%E3%81%99%EF%BC%8E&text=%E3%83%9E%E3%82%A4%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%A8%E3%81%AF%E3%80%81DB%E3%81%AB,%E8%A1%8C%E3%81%86%E3%81%9F%E3%82%81%E3%81%AE%E6%A9%9F%E8%83%BD%E3%81%A7%E3%81%99%E3%80%82)
 
 
-### [JDBC](https://www.oracle.com/java/technologies/javase/javase-tech-database.html)とは
+#### [JDBC](https://www.oracle.com/java/technologies/javase/javase-tech-database.html)とは
 データベースを扱うためにPlayが提供しているライブラリ。  
 JavaのデータベースライブラリのJDBCを使ってデータベースにアクセスするための機能や、データベースをテストをするためのライブラリです。
 
 - [Play Frameworkを使ったWebアプリケーション作成入門3日目](https://hexx.github.io/scala_text/introduction-of-web-application-3rd-day.html)
 
 
-### [Slick](https://scala-slick.org/)
+#### [Slick](https://scala-slick.org/)とは
 データベースへアクセスするためのライブラリで、Playに標準搭載されている。  
 SQLの代わりのクエリ文をScalaに書くことができる。  
 
 同じライブラリに、[Scalike](http://scalikejdbc.org/)というものもある。  
 
 
-2. [Database Configuration](https://www.playframework.com/documentation/2.8.x/PlaySlick#Database-Configuration)を記載する
+### 2. [Database Configuration](https://www.playframework.com/documentation/2.8.x/PlaySlick#Database-Configuration)を記載する
 application.confに有効なSlickドライバーとデータベース構成を記載する。  
 この時、デフォルトのSlickデータベースは`default`という名前が推奨される。  
 
