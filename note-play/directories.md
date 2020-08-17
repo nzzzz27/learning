@@ -6,7 +6,7 @@ app/
     lib/　　　　　　　　　　#ライブラリに関係するファイルを置く場所 
         model/           #DBからデータを取得するとき用のモデル
         persistence/     #dbから値を取得するメソッドなど(CRUD)を記述
-             db/         #dbに格納するためのカラム定義やマッピングなどを記述
+             db/         #dbに格納するためのカラム定義やマッピングなどを記述： Slick Schema （https://scala-slick.org/doc/3.2.1/schemas.html）
 ```
 persistenceとは：
 [javax.persistence](https://github.megascus.dev/jpa-spec/docs/apidocs/)パッケージがある。
