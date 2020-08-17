@@ -14,3 +14,9 @@ persistenceとは：
 > Java Persistence APIは永続化とオブジェクト/リレーショナルマッピングの管理のためのAPIです。
 
 オブジェクト/リレーショナルマッピングは、データベースとオブジェクト指向プログラミング言語の間の非互換なデータを変換するプログラミング技法。  
+
+
+libファイル設定の流れ：  
+1. `lib/model`： `lib/persistence/db`用のモデルを定義
+2. `lib/persistence/db`： DBから取得したデータを、Scala用に変換。この時モデルに、`lib/model`を指定
+3. `lib/persistence`: `lib/persistence/db`のデータを取得/加工し、controllersへ渡す
