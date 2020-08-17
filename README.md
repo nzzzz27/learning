@@ -2,6 +2,7 @@
 - [Scala公式ドキュメント（日本語）](https://docs.scala-lang.org/ja/)
 - [Scala定義](https://github.com/scala/scala/tree/2.13.x/src/library/scala)
 - [Scala定義 - util](https://github.com/scala/scala/tree/2.13.x/src/library/scala/util)
+- [Scala standard liblary](https://www.scala-lang.org/api/current/scala/concurrent/Future.html)
 - [scala-text](https://hexx.github.io/scala_text/)
 - [Hishidamaさんのサイト](http://www.ne.jp/asahi/hishidama/home/tech/scala/index.html)
 - [is99: Ninety-Nine Scala Problems](http://aperiodic.net/phil/scala/s-99/)：問題集
