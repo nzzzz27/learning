@@ -50,3 +50,8 @@ class Coffees(tag: Tag) extends Table[(String, Int, Double, Int, Int)](tag, "COF
 - SqlType(typeName: String): Use a non-standard database-specific type for the DDL statements (e.g. SqlType("VARCHAR(20)") for a String column).
 - 
 - AutoInc: Mark the column as an auto-incrementing key when creating the DDL statements. Unlike the other column options, this one also has a meaning outside of DDL creation: Many databases do not allow non-AutoInc columns to be returned when inserting data (often silently ignoring other columns), so Slick will check if the return column is properly marked as AutoInc wHere needed.
+
+### `*`メゾット
+全てのテーブルには、デフォルトのプロジェクションを含む`*`メゾットが必要。  
+
+これは、クエリから行を（テーブル行オブジェクトの形式で）返すときに返されるものを示します。 Slickの*プロジェクションは、データベース内のプロジェクションと一致する必要はありません。

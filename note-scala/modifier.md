@@ -27,4 +27,17 @@ val myRectangle = 3 x 4   //Rectabgle(3,4)
 4. x呼び出しは型チェックをして、結果を戻す
 ```
 
+## sealed
+`sealed`修飾子が付けられたクラスは、**同一ファイル内に定義さあれたクラスからしか継承できない**。  
+なので、`sealed`修飾子がついたクラスを継承するクラスが簡単にわかる。 
 
+```
+sealed abstract class Idol
+
+final class Haruka extends Idol
+final class Chihaya extends Idol
+final class Hibiki extends Idol
+```
+
+参考サイト：  
+- [【Scala】列挙型を使おう](https://dev.classmethod.jp/articles/scala-algebra-data-type/)
