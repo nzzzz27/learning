@@ -4,7 +4,7 @@
  * https://leetcode.com/problems/single-number/
  */
 
-object solution {
+object leetcode136 {
   def main(args: Array[String]): Unit = {
     val intArray = Array(2, 2, 1)
     println(singleNumber(intArray))
