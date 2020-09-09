@@ -1,7 +1,32 @@
 # [Metals](https://scalameta.org/metals/docs/editors/vim.html) 
-## coc-metalsで入れる方法
+## 共通
+`~/.vim/coc-settings.json`というmetalsの設定ファイルを作成
+```
+{
+  "languageserver": {
+    "metals": {
+      "command": "metals-vim",
+      "rootPatterns": ["build.sbt"],
+      "filetypes": ["scala", "sbt"]
+    }
+  }
+}
+```
+## 1.coc-metalsで入れる方法
+`.vimrc`に以下を追記
+```
+Plug 'derekwyatt/vim-scala'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+call plug#end()
 
-## curlコマンドで入れる方法
+
+" Configuration for vim-scala
+au BufRead,BufNewFile *.sbt set filetype=scala
+```
+Scalaのrootディレクトリに入り、`:cocInstall coc-metals`  
+`build import`のポップアップが出るので、buildファイルをインストールする  
+
+## 2.curlコマンドで入れる方法
 ```
 cd ~/
 ```
