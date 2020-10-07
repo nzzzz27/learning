@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-07T03:20:13.093Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="4ux1DXslu8xQHVy8wOfo" version="13.7.7" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-07T03:24:56.225Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="DmcEYO43qz-2q5C6Tg3z" version="13.7.7" type="github">
   <diagram name="Page-1" id="2a216829-ef6e-dabb-86c1-c78162f3ba2b">
     <mxGraphModel dx="1160" dy="771" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
       <root>
@@ -59,7 +59,10 @@
         <mxCell id="0MRuWFr10m5aBKBqAMy3-38" value="data" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.836;entryY=1.031;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="kIRwwmv4vXCAAxYEJwXd-32" target="0MRuWFr10m5aBKBqAMy3-20" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="kIRwwmv4vXCAAxYEJwXd-32" value="Controller&lt;br&gt;&lt;br&gt;libのメソッドを呼び、データを取得 / 加工" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="k5uxpjUuvU6zf0auNCVZ-4" value="data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="kIRwwmv4vXCAAxYEJwXd-32" target="k5uxpjUuvU6zf0auNCVZ-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kIRwwmv4vXCAAxYEJwXd-32" value="Controller&lt;br&gt;&lt;br&gt;libのメソッドを呼び、データをjson取得 / 加工" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="450" y="440" width="260" height="80" as="geometry" />
         </mxCell>
         <mxCell id="0MRuWFr10m5aBKBqAMy3-1" value="" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="kIRwwmv4vXCAAxYEJwXd-19" target="kIRwwmv4vXCAAxYEJwXd-20" edge="1">
@@ -189,7 +192,7 @@
           <mxGeometry x="440" y="271" width="50" height="50" as="geometry" />
         </mxCell>
         <mxCell id="0MRuWFr10m5aBKBqAMy3-41" value="API" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;rounded=0;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
-          <mxGeometry x="440" y="410" width="50" height="50" as="geometry" />
+          <mxGeometry x="680" y="420" width="50" height="50" as="geometry" />
         </mxCell>
         <mxCell id="0MRuWFr10m5aBKBqAMy3-42" value="API" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;rounded=0;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
           <mxGeometry x="120" y="420" width="50" height="50" as="geometry" />
@@ -205,6 +208,12 @@
         </mxCell>
         <mxCell id="0MRuWFr10m5aBKBqAMy3-44" value="data" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" parent="0MRuWFr10m5aBKBqAMy3-43" connectable="0" vertex="1">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k5uxpjUuvU6zf0auNCVZ-1" value="JSON&lt;br&gt;&lt;br&gt;write / read" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="280" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k5uxpjUuvU6zf0auNCVZ-2" value="API" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;rounded=0;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="130" y="256" width="50" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
